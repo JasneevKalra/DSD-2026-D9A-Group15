@@ -16,8 +16,7 @@ Circuit: `../Game_Score_Categorizer_H4.circ`. Screenshots were taken in Logisim 
 | T8 Boundary score 5 | `Score`=0101 (5), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts 0001/0001/0001 | Pass | `sim_08_score5_medium.png` |
 | T9 Score 9 (mid MEDIUM) | `Score`=1001 (9), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts 0001/0010/0001 | Pass | `sim_09_score9_medium.png` |
 | T10 Boundary score 11 | `Score`=1011 (11), `START`=1 | HIGH | Q1/Q0 = 1/1, `HIGH_LED` lit (red), counts 0001/0010/0010 | Pass | `sim_10_score11_high.png` |
-
-Score 10 (the upper MEDIUM boundary) was not tested; 9 (T9) and 11 (T10) were tested on either side of it.
+| T11 Boundary score 10 | `Score`=1010 (10), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts LOW/MEDIUM/HIGH = 0001/0011/0010 | Pass | `sim_11_score10_medium.png` |
 
 The counts rise 1/0/0, 1/1/0, 1/1/1 across T2, T3 and T4, showing each detection increments only its own category counter.
 
