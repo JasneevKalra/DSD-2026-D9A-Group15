@@ -6,9 +6,9 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | Jasneevsingh Kalra | D9A - 26 | JasneevKalra |
-| Member 2 | Tanmay Sahadeo Taware | D9A - 57 | [Username] |
-| Member 3 | Suraj Ramnath Dalvi | D9B - 7 | [Username] |
-| Member 4 | Yash Abhijit Khuperkar | D9B - 25 | [Username] |
+| Member 2 | Tanmay Sahadeo Taware | D9A - 57 | tanmaytaware-droid |
+| Member 3 | Suraj Ramnath Dalvi | D9B - 7 | 2025surajdalvi |
+| Member 4 | Yash Abhijit Khuperkar | D9B - 25 | yashkhuperkar |
 
 **Class:** D9A (Group 15, mixed D9A/D9B)  
 **Group ID:** D9A_Group15  
