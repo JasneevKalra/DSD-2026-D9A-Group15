@@ -14,7 +14,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | `02_FSM_Logisim/fsm_state_diagram.webp`, `02_FSM_Logisim/fsm_state_table.md` | 19/11/2026 |
 | 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` | 19/11/2026 |
-| 5 | Logisim simulation verified | In Progress | `02_FSM_Logisim/simulation/simulation_results.md` (reset, LOW 3/4, MEDIUM 5/7/9, HIGH 11/12, ACK and state-hold passed; boundary 10, count-once, repeats, reset-with-counts still to capture) | 19/11/2026 |
+| 5 | Logisim simulation verified | In Progress | `02_FSM_Logisim/simulation/simulation_results.md` (reset, LOW 3/4, MEDIUM 5/7/9, HIGH 11/12, ACK and state-hold passed; score 10 skipped by the group; count-once, repeats, reset-with-counts still to capture) | 19/11/2026 |
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/tb_game_score_categorizer.v` (written; simulation not yet run) | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`; bitstream generated in Vivado (reported by the group; utilization/timing reports not yet uploaded) | 19/11/2026 15:45 |
@@ -45,6 +45,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 18:49 | Logisim simulation screenshots uploaded together: reset/IDLE, LOW (3), MEDIUM (7), HIGH (12) and ACK return to IDLE. All matched expected states, LEDs and counter values; counters rose 1/0/0, 1/1/0, 1/1/1 | `02_FSM_Logisim/simulation/` | Boundary scores, hold, count-once, repeated detections and reset-clears-non-zero-counters screenshots still missing | Capture the remaining tests and complete the table | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 18:54 | Logisim hold test added: in HIGH state, changing Score to 1 with START=1 left the state at HIGH and the counts unchanged (0/0/1), as expected | `02_FSM_Logisim/simulation/sim_06_hold_state.png` | Boundary scores, count-once, repeated detections and reset-clears-non-zero-counters screenshots still missing | Capture the remaining tests | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 18:57 | Logisim boundary tests added: score 4 gives LOW, 5 gives MEDIUM, 9 gives MEDIUM, 11 gives HIGH; each incremented only its own counter. The screenshot meant for score 10 shows 1001 (9) | `02_FSM_Logisim/simulation/sim_07` to `sim_10` | Score 10 boundary, count-once, repeated detections and reset-clears-non-zero-counters screenshots still missing | Capture score 10 (1010) and the remaining tests | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 19:01 | Group decided to skip the score-10 test (9 and 11 were tested on either side of it); recorded in simulation_results.md | `02_FSM_Logisim/simulation/simulation_results.md` | Count-once, repeated detections and reset-clears-non-zero-counters screenshots still missing | Capture the remaining three tests | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.

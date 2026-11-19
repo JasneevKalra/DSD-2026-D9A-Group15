@@ -17,11 +17,12 @@ Circuit: `../Game_Score_Categorizer_H4.circ`. Screenshots were taken in Logisim 
 | T9 Score 9 (mid MEDIUM) | `Score`=1001 (9), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts 0001/0010/0001 | Pass | `sim_09_score9_medium.png` |
 | T10 Boundary score 11 | `Score`=1011 (11), `START`=1 | HIGH | Q1/Q0 = 1/1, `HIGH_LED` lit (red), counts 0001/0010/0010 | Pass | `sim_10_score11_high.png` |
 
+Score 10 (the upper MEDIUM boundary) was not tested; 9 (T9) and 11 (T10) were tested on either side of it.
+
 The counts rise 1/0/0, 1/1/0, 1/1/1 across T2, T3 and T4, showing each detection increments only its own category counter.
 
 ## Tests still to capture
 
-- Boundary score 10 (`Score`=1010; the screenshot meant for it shows 1001, which is 9).
 - `START` held for several ticks counting only once.
 - Counters after repeated detections of the same category.
 - `RESET` clearing counters that were non-zero (the reset screenshot shows counts already at 0000).
