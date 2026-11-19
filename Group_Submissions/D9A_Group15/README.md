@@ -43,20 +43,7 @@ Full analysis: `01_Problem_Analysis/problem_analysis.md`.
 - **Feasibility:** the implemented design uses 92 LUTs, 118 flip-flops and 20 CARRY4 on a device with 32,600 LUTs, and meets timing at 100 MHz (see section 9).
 
 ## 4. Architecture
-Block diagram (text form; an image can be added to this folder):
-
-```
-Score[3:0] --> [Range decoder: score<5, score>10] --> L, H, M
-                                                        |
-START, ACK, RESET ----> [Next-state logic] <------------+
-                              |        ^
-                              v        |
-                     [2-bit state register Q1Q0] --> [Output logic] --> LOW/MEDIUM/HIGH LEDs
-                              |
-                  GO = IDLE.START, with L/M/H
-                              v
-              [3 x 4-bit counters (H4)] --> LOW/MEDIUM/HIGH counts
-```
+![Architecture block diagram](01_Problem_Analysis/architecture_block_diagram.png)
 
 - **Modules:** range decoder (two comparators), next-state logic, 2-bit state register, Moore output logic, three category counters.
 - **Data/control flow:** the score feeds the comparators; `START`, `ACK` and the decoder outputs drive the next-state logic; the state register drives the LEDs; the counter enables are `GO x category`.

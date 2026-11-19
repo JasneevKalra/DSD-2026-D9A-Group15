@@ -11,7 +11,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Completed | `01_Problem_Analysis/problem_analysis.md` | 19/11/2026 |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed | `01_Problem_Analysis/architecture_block_diagram.png`, README section 4 | 19/11/2026 |
 | 3 | FSM diagram/table completed, if applicable | Completed | `02_FSM_Logisim/fsm_state_diagram.webp`, `02_FSM_Logisim/fsm_state_table.md` | 19/11/2026 |
 | 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` | 19/11/2026 |
 | 5 | Logisim simulation verified | Completed | `02_FSM_Logisim/simulation/simulation_results.md` and `sim_01` to `sim_15` screenshots (all 14 planned tests passed) | 19/11/2026 |
@@ -56,6 +56,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 20:35 | Correction: the hardware test is not impossible, it is planned for tomorrow (20/11/2026). Milestone 9 set back to Not Started and the FPGA results note updated; no hardware results are claimed | `04_FPGA_Hardware/fpga_results.md` | Hardware test not yet done | Program the Boolean Board on 20/11/2026, record observations and photos | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 20:37 | Plan recorded: the hardware test and the final report will both be done on 20/11/2026; results and presentation will be finalised after the hardware test | `07_Final_Report/` (pending) | Final report not yet written; hardware test pending | Do the hardware test, then write the final report and finalise results and presentation on 20/11/2026 | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 20:45 | Group README sections 2 to 10 filled in from the repo evidence (problem, analysis, architecture, FSM, Logisim, Verilog, verification, FPGA results, challenges). Sections 11, 13, 14 and 15 and the hardware parts of section 9 left for the group to complete | `README.md` | Task allocation, hardware result, conclusion, reflection and checklist pending; Logisim version added (v5.0.0) | Complete after the hardware test on 20/11/2026 | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 21:39 | Architecture block diagram added and linked in README section 4. The first AI-generated diagram had wrong RESET, START and CLK connections, so a corrected diagram was drawn and used | `01_Problem_Analysis/architecture_block_diagram.png` | Hardware test, results, presentation, final report and README sections 9, 11, 13, 14, 15 still pending | Complete after the hardware test on 20/11/2026 | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
