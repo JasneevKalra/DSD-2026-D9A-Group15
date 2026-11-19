@@ -17,7 +17,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 5 | Logisim simulation verified | Completed | `02_FSM_Logisim/simulation/simulation_results.md` and `sim_01` to `sim_15` screenshots (all 14 planned tests passed) | 19/11/2026 |
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
 | 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Simulation_Results/simulation_results.md` (Vivado XSim: 88 checks, 0 errors, TEST PASSED; waveforms for Test 1) | 19/11/2026 |
-| 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`, `04_FPGA_Hardware/fpga_results.md`, `04_FPGA_Hardware/utilization_report.png` (92 LUTs, 118 flip-flops; timing report still to add) | 19/11/2026 |
+| 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`, `04_FPGA_Hardware/fpga_results.md`, `04_FPGA_Hardware/utilization_report.png` (92 LUTs, 118 flip-flops, 20 CARRY4; timing report still to add) | 19/11/2026 |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | In Progress | https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 (opened; will be updated as remaining deliverables are added) | 19/11/2026 |
@@ -50,6 +50,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 19:18 | Logisim simulation completed: count-once (START held, count stays 1), repeated LOW detections (counts 1, 2, 3) and reset clearing non-zero counters (3 to 0) captured. All 14 planned tests passed; one duplicate screenshot was dropped | `02_FSM_Logisim/simulation/` | Verilog/Vivado simulation evidence, utilization and timing reports, hardware test, results, presentation and report still missing | Run Vivado simulation and save waveform and log; upload reports; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 19:35 | Vivado behavioral simulation run to completion: Checks run 88, Errors 0, TEST PASSED, $finish at 1760 ns. Console and waveform screenshots uploaded | `03_Verilog_Implementation/Simulation_Results/` | Utilization and timing reports, hardware test, results, presentation and report still missing | Upload utilization and timing report screenshots; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 19:41 | Vivado utilization report uploaded: 92 Slice LUTs, 118 flip-flops, 57 slices, 23 bonded IOBs, 1 BUFGCTRL, no Block RAM or DSP | `04_FPGA_Hardware/utilization_report.png`, `04_FPGA_Hardware/fpga_results.md` | CARRY4 count and timing summary not yet uploaded; hardware not yet tested | Upload CARRY4 count and timing summary; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 20:11 | CARRY4 count added to the FPGA results: 20 (read from the implemented design with a Tcl command) | `04_FPGA_Hardware/fpga_results.md` | Timing summary (WNS, WHS) and hardware test still missing | Upload timing summary; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.

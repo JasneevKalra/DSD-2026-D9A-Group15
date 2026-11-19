@@ -15,10 +15,11 @@ Source: `utilization_report.png` (Vivado Utilization, hierarchy view).
 | Slices | 57 | 8,150 | about 1 % |
 | Bonded IOB | 23 | 210 | 11 % |
 | BUFGCTRL | 1 | 32 | 3 % |
+| CARRY4 | 20 | | |
 | Block RAM | 0 | | |
 | DSP | 0 | | |
 
-The Block RAM and DSP sections of the report are empty (no RAM or DSP is used).
+The CARRY4 count was read with the Tcl command `llength [get_cells -hier -filter {REF_NAME == CARRY4}]`. The Block RAM and DSP sections of the report are empty (no RAM or DSP is used).
 
 ### Utilization by module
 
@@ -33,6 +34,5 @@ The Block RAM and DSP sections of the report are empty (no RAM or DSP is used).
 The 23 bonded IOBs match the design's ports: `mclk` (1), `sw` (4), `btn` (3), `led` (3), `D0_a` (4), `D0_seg` (8).
 
 ## Still to add
-- CARRY4 count (not visible in this screenshot).
 - Timing summary (WNS, WHS, constraints met).
 - Hardware test results and photos.
