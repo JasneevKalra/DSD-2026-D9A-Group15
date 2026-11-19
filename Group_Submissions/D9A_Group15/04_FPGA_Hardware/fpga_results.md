@@ -33,6 +33,16 @@ The CARRY4 count was read with the Tcl command `llength [get_cells -hier -filter
 
 The 23 bonded IOBs match the design's ports: `mclk` (1), `sw` (4), `btn` (3), `led` (3), `D0_a` (4), `D0_seg` (8).
 
-## Still to add
-- Timing summary (WNS, WHS, constraints met).
-- Hardware test results and photos.
+## Timing summary (implemented design, 100 MHz clock)
+
+Source: `timing_summary.png` (Vivado Design Timing Summary).
+
+| Check | Worst slack | Total violation | Failing endpoints | Endpoints |
+|---|---:|---:|---:|---:|
+| Setup (WNS / TNS) | 5.534 ns | 0.000 ns | 0 | 212 |
+| Hold (WHS / THS) | 0.173 ns | 0.000 ns | 0 | 212 |
+| Pulse width (WPWS / TPWS) | 4.500 ns | 0.000 ns | 0 | 119 |
+
+Vivado reports: **All user specified timing constraints are met.** With a 10 ns clock period and 5.534 ns of setup slack, the design has a comfortable margin at 100 MHz.
+
+## Still to add- Hardware test results and photos.
