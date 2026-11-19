@@ -16,70 +16,106 @@
 **Final Pull Request URL:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** Game Score Categorizer (Moore FSM), selected modification **H4 – Category Counters**.
+- **Problem summary:** A 4-bit score (0–15) is classified into LOW (0–4), MEDIUM (5–10) or HIGH (11–15). A Moore FSM holds the detected category and lights one LED per category until the user acknowledges. With H4, three counters record how many times each category has been detected.
+- **Objective:** Classify every score correctly, hold the category until `ACK`, count each detection exactly once in its category counter, and clear everything on `RESET`; verify in Logisim, simulate in Verilog and implement on the Real Digital Boolean Board (xc7s50csga324-1).
+- **Inputs and outputs:**
+
+| Signal | Direction | Width | Meaning |
+|---|---|---|---|
+| `Score[3:0]` | Input | 4 | Score from the switches |
+| `START` | Input | 1 | Classify and latch the score (acted on only in IDLE) |
+| `ACK` | Input | 1 | Return from a category state to IDLE |
+| `RESET` | Input | 1 | Clear state and counters (asynchronous, active-high) |
+| `CLK` | Input | 1 | Clock |
+| `LOW_LED`, `MEDIUM_LED`, `HIGH_LED` | Output | 1 each | Category indicators |
+| `LOW_COUNT`, `MEDIUM_COUNT`, `HIGH_COUNT` | Output | 4 each | Category counters (H4) |
+
+- **Constraints and assumptions:** The score range is 0–15, so every 4-bit value is valid and no error state is needed. `START` and `ACK` are single-clock pulses on the board (after debouncing). Counters are 4 bits and wrap from 15 to 0. While in a category state, further `START` pulses and score changes are ignored.
 
 ## 3. Problem Analysis and Proposed Solution
-Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
+Full analysis: `01_Problem_Analysis/problem_analysis.md`.
 
-[Write here]
+- **Requirements:** category by comparing the score with two thresholds (score < 5 is LOW, score > 10 is HIGH, otherwise MEDIUM); the score is read only on `START` in IDLE; the FSM stays in the category state until `ACK`; exactly one counter increments per detection; `RESET` clears the state and all counters.
+- **Edge cases:** boundary scores 4, 5, 10 and 11; `START` held for several clocks; `START` applied again in a category state; `ACK` applied in IDLE; counter overflow; `RESET` in a category state.
+- **Proposed solution:** two comparators as the range decoder, a 2-bit Moore FSM (IDLE 00, LOW 01, MEDIUM 10, HIGH 11) and three 4-bit counters enabled by `GO x category`, where `GO = IDLE . START`.
+- **Distinctive features:** counts once per detection (the enable is tied to the IDLE-to-category transition, not to the held `START` level); asynchronous reset; on the board, debounced single-pulse `START`/`ACK` and a multiplexed 7-segment display of the state and the three counts.
+- **Feasibility:** the implemented design uses 92 LUTs, 118 flip-flops and 20 CARRY4 on a device with 32,600 LUTs, and meets timing at 100 MHz (see section 9).
 
 ## 4. Architecture
-Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
+Block diagram (text form; an image can be added to this folder):
 
-![Block diagram](path/to/block_diagram.png)
+```
+Score[3:0] --> [Range decoder: score<5, score>10] --> L, H, M
+                                                        |
+START, ACK, RESET ----> [Next-state logic] <------------+
+                              |        ^
+                              v        |
+                     [2-bit state register Q1Q0] --> [Output logic] --> LOW/MEDIUM/HIGH LEDs
+                              |
+                  GO = IDLE.START, with L/M/H
+                              v
+              [3 x 4-bit counters (H4)] --> LOW/MEDIUM/HIGH counts
+```
+
+- **Modules:** range decoder (two comparators), next-state logic, 2-bit state register, Moore output logic, three category counters.
+- **Data/control flow:** the score feeds the comparators; `START`, `ACK` and the decoder outputs drive the next-state logic; the state register drives the LEDs; the counter enables are `GO x category`.
+- **Trade-offs:** the score is read live at the `START` edge instead of being held in a separate input register, which keeps the design small; the category is held in the state register.
 
 ## 5. FSM Design
-State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
+The design uses a **Moore** FSM with four states: IDLE (00), LOW (01), MEDIUM (10) and HIGH (11). Outputs depend only on the present state. In IDLE, `START` moves to the category chosen by the score (LOW 0–4, MEDIUM 5–10, HIGH 11–15). In a category state, `ACK` returns to IDLE and otherwise the state is held. `RESET` forces IDLE (asynchronous) and clears the counters.
 
-**Diagram:** [Path/link]  
-**State table:** [Path/link]
+**Diagram:** `02_FSM_Logisim/fsm_state_diagram.webp`  
+**State table, outputs and Boolean equations:** `02_FSM_Logisim/fsm_state_table.md`
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
-- Circuit file: [Path to `.circ`]
-- Test cases and expected/observed behaviour: [Details]
-- Issues and corrections: [Details]
-- Screenshot/evidence: [Path/link]
+- Logisim version: Logisim-evolution (exact version to be confirmed).
+- Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H4.circ`
+- Test cases and expected/observed behaviour: 14 tests, all passed (reset, LOW 3 and 4, MEDIUM 5/7/9/10, HIGH 11/12, ACK, state hold, count-once, repeated detections, reset clearing non-zero counters). Table: `02_FSM_Logisim/simulation/simulation_results.md`.
+- Issues and corrections: see section 10.
+- Screenshot/evidence: `02_FSM_Logisim/simulation/` (`sim_01` to `sim_15`).
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
-- Architecture/coding decisions: [Details]
-- Synthesizability considerations: [Details]
+- Tool/version: Vivado v2018.3 (64-bit)
+- Top module and submodules: top `top_boolean`; submodules `game_score_categorizer` (FSM and counters) and `debounce` (3 instances).
+- Architecture/coding decisions: the Logisim logic is kept in `game_score_categorizer`; `top_boolean` adds input synchronizers, 20 ms debouncing, single-pulse `START`/`ACK` and a multiplexed 7-segment display (state and the three counts). Asynchronous reset matches the Logisim circuit.
+- Synthesizability considerations: all RTL is synthesizable (registered state, counters and debouncers, combinational next-state and decode); only the testbench uses delays. Vivado synthesis and implementation completed with a bitstream.
 - RTL: `03_Verilog_Implementation/RTL/`
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
 ## 8. Verification and Simulation Results
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | [ ] | [ ] | [ ] | [ ] |
-| T02 | [ ] | [ ] | [ ] | [ ] |
-| T03 | [ ] | [ ] | [ ] | [ ] |
+| T01 | Every score 0–15 with `START`, then a second `START` with another score, then `ACK` | Correct category, counted once, state held, back to IDLE on `ACK` | As expected (49 checks) | Pass |
+| T02 | `START` held for 3 clocks | Counted once | As expected (2 checks) | Pass |
+| T03 | No `START`; score changes and `ACK` in IDLE | Stays IDLE | As expected (2 checks) | Pass |
+| T04 | 16 LOW detections | 4-bit counter wraps to its old value | As expected (32 checks) | Pass |
+| T05 | Asynchronous `RESET` in HIGH state | State and all counts cleared | As expected (3 checks) | Pass |
 
-Tool/version: [Details]  
-Number passed/failed: [Details]  
-Waveform/log path: [Path]
+Tool/version: Vivado v2018.3 (64-bit), behavioral simulation (XSim)  
+Number passed/failed: 88 checks run, 0 errors, TEST PASSED (finished at 1760 ns)  
+Waveform/log path: `03_Verilog_Implementation/Simulation_Results/` (`simulation_results.md`, `sim_console_test_passed.png`, `sim_waveform_all_16_scores.png`, `sim_waveform_zoom_detections.png`)
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: [Details]
-- Tool/version: [Details]
-- Clock/constraints: [Details]
-- Synthesis/implementation summary: [Details]
-- Programming and hardware test result: [Details]
-- Evidence path: `04_FPGA_Hardware/`
+- FPGA board/device: Real Digital Boolean Board, xc7s50csga324-1 (Spartan-7)
+- Tool/version: Vivado v2018.3 (64-bit)
+- Clock/constraints: 100 MHz clock on pin F14 (10 ns period); `04_FPGA_Hardware/boolean_board.xdc` (`sw[3:0]` score, `btn[0]` START, `btn[1]` ACK, `btn[2]` RESET, `led[2:0]` category LEDs, `D0_a`/`D0_seg` 7-segment display)
+- Synthesis/implementation summary: 92 Slice LUTs, 118 flip-flops, 20 CARRY4, 57 slices, 23 bonded IOBs, no Block RAM or DSP. Timing met: WNS 5.534 ns, WHS 0.173 ns, WPWS 4.500 ns, 0 failing endpoints. Bitstream generated. Details: `04_FPGA_Hardware/fpga_results.md`.
+- Programming and hardware test result: [To be completed after the hardware test planned for 20/11/2026]
+- Evidence path: `04_FPGA_Hardware/` (`utilization_report.png`, `timing_summary.png`)
 
-Explain differences between simulation and hardware results, if any.
+Explain differences between simulation and hardware results, if any: [To be completed after the hardware test]
 
 ## 10. Challenges, Debugging and Improvements
 | Issue | Root cause | Correction | Outcome |
 |---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] |
+| Overlapping clock and reset wires in the first Logisim layout | The register and counter `CLK` and `CLR` pins sit at the same height, so the wires merged | Routed these wires out of the bottom of each component | Circuit opens with every net separate and simulates correctly |
+| First FSM state table did not match the design | It ignored the score category in IDLE and the priority of `ACK` in category states | Rewrote the table with the score category, `ACK` priority and counter actions | Table now matches the Logisim and Verilog behaviour |
+| Vivado DRC error on bank 34 (`sw[3]`, SSTL135 VREF) | Constraints for the wrong board (Arty S7 pins) were used | Replaced them with the Boolean Board pins (LVCMOS33) | Synthesis, implementation and bitstream completed |
+| Vivado simulation showed no "TEST PASSED" | Default run time of 1000 ns stopped before the testbench finished | Ran the simulation to completion with `run all` | 88 checks, 0 errors, TEST PASSED |
+| First Logisim screenshots showed no pin values | They were exported in printer view | Re-captured the screenshots in simulation mode | Evidence shows live LEDs, pins and counts |
 
-Future improvements: [Details]
+Future improvements: an error state for invalid input, saturating counters instead of wrap-around, a Mealy version with immediate output, and sending the counts to a PC over UART.
 
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
@@ -97,12 +133,12 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[Write here]
+[To be completed after the hardware test planned for 20/11/2026]
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[Write here]
+[To be completed by the team]
 
 ## 15. Final Submission Checklist
 - [ ] Team details and problem analysis complete.
