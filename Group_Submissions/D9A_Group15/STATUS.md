@@ -16,7 +16,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` | 19/11/2026 |
 | 5 | Logisim simulation verified | Completed | `02_FSM_Logisim/simulation/simulation_results.md` and `sim_01` to `sim_15` screenshots (all 14 planned tests passed) | 19/11/2026 |
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
-| 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/tb_game_score_categorizer.v` (written; simulation not yet run) | 19/11/2026 |
+| 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Simulation_Results/simulation_results.md` (Vivado XSim: 88 checks, 0 errors, TEST PASSED; waveforms for Test 1) | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`; bitstream generated in Vivado (reported by the group; utilization/timing reports not yet uploaded) | 19/11/2026 15:45 |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
@@ -48,6 +48,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 19:01 | Group decided to skip the score-10 test (9 and 11 were tested on either side of it); recorded in simulation_results.md | `02_FSM_Logisim/simulation/simulation_results.md` | Count-once, repeated detections and reset-clears-non-zero-counters screenshots still missing | Capture the remaining three tests | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 19:03 | Logisim score-10 test captured after all: Score 1010 gives MEDIUM, MEDIUM_COUNT rose to 3 with the other counts unchanged. All boundary scores 4, 5, 10 and 11 now tested | `02_FSM_Logisim/simulation/sim_11_score10_medium.png` | Count-once, repeated detections and reset-clears-non-zero-counters screenshots still missing | Capture the remaining three tests | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 19:18 | Logisim simulation completed: count-once (START held, count stays 1), repeated LOW detections (counts 1, 2, 3) and reset clearing non-zero counters (3 to 0) captured. All 14 planned tests passed; one duplicate screenshot was dropped | `02_FSM_Logisim/simulation/` | Verilog/Vivado simulation evidence, utilization and timing reports, hardware test, results, presentation and report still missing | Run Vivado simulation and save waveform and log; upload reports; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 19:35 | Vivado behavioral simulation run to completion: Checks run 88, Errors 0, TEST PASSED, $finish at 1760 ns. Console and waveform screenshots uploaded | `03_Verilog_Implementation/Simulation_Results/` | Utilization and timing reports, hardware test, results, presentation and report still missing | Upload utilization and timing report screenshots; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
