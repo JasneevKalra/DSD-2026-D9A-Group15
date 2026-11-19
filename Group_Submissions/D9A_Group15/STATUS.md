@@ -15,9 +15,9 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
 | 4 | Logisim circuit implemented | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` (circuit built; not yet simulated) | 19/11/2026 13:48 |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | In Progress | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (written; not yet compiled in Vivado) | 19/11/2026 |
+| 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/tb_game_score_categorizer.v` (written; simulation not yet run) | 19/11/2026 |
-| 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
+| 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`; bitstream generated in Vivado (reported by the group; utilization/timing reports not yet uploaded) | 19/11/2026 15:45 |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
@@ -34,6 +34,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 14:14 | H2 Mealy Logisim file re-spaced (wider rows/columns/rails, same logic, same 40 gates); re-checked with the same script, all tests pass | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy.circ` | Still not opened in real Logisim | Open in Logisim, confirm no blue/red wires, run tests, screenshots | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 14:30 | Decision: final design uses hint H4 (Category Counters). The H2 Mealy circuit rows above are discarded; the H2 file was never uploaded to the repo. Repo folder structure checked against template (Verilog `RTL/`, `Testbench/`, `Simulation_Results/` subfolders added); teammates' GitHub usernames added to README | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ`, `03_Verilog_Implementation/` | H4 circuit still not simulated in Logisim; problem analysis, FSM diagram/table, results, presentation and report still missing | Simulate H4 in Logisim with screenshots; write problem analysis and FSM diagram/table | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 15:44 | Stage 2: Verilog RTL (core FSM + counters, debouncer, Boolean Board top with 7-segment display), self-checking testbench (all 16 scores, hold/count-once, idle, 4-bit wrap, async reset) and Boolean Board XDC written and uploaded | `03_Verilog_Implementation/RTL/game_score_categorizer.v`, `03_Verilog_Implementation/Testbench/tb_game_score_categorizer.v`, `04_FPGA_Hardware/boolean_board.xdc` | Not yet compiled or simulated in Vivado; XDC pins taken from Real Digital tutorial, segment/digit order unverified on the board | Run behavioral simulation in Vivado and save waveform/log to `Simulation_Results/`; synthesize and program the board | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 15:45 | Vivado: Verilog compiled and synthesis, implementation and bitstream generation completed successfully (reported by the group) | `03_Verilog_Implementation/RTL/game_score_categorizer.v`, `04_FPGA_Hardware/boolean_board.xdc` | Behavioral simulation result not yet recorded; utilization/timing reports and screenshots not yet uploaded; hardware not yet tested | Run/save simulation waveform and log; upload utilization and timing report screenshots; program the Boolean Board and test | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
