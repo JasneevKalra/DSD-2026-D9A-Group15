@@ -13,7 +13,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 1 | Problem requirements and assumptions documented | Completed | `01_Problem_Analysis/problem_analysis.md` | 19/11/2026 |
 | 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | `02_FSM_Logisim/fsm_state_diagram.webp`, `02_FSM_Logisim/fsm_state_table.md` | 19/11/2026 |
-| 4 | Logisim circuit implemented | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` (circuit built; not yet simulated) | 19/11/2026 13:48 |
+| 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ`, `02_FSM_Logisim/logisim_circuit_full.webp` (full circuit export) | 19/11/2026 18:07 |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/tb_game_score_categorizer.v` (written; simulation not yet run) | 19/11/2026 |
@@ -38,6 +38,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 15:50 | Problem analysis written: summary, objectives, I/O table, requirements, assumptions, constraints, edge cases, proposed solution and feasibility | `01_Problem_Analysis/problem_analysis.md` | FPGA utilization figures to be added from the Vivado report | Draw FSM diagram, write state table, add Logisim simulation evidence | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 15:59 | Moore FSM state diagram checked against the Logisim/Verilog design (correct) and uploaded. The first state-table image had errors (ignored the score category in IDLE; showed ACK=1 in IDLE returning to IDLE; START=1 in a category state ignored ACK), so it was replaced by a corrected table with encoding, outputs, counter actions and Boolean equations | `02_FSM_Logisim/fsm_state_diagram.webp`, `02_FSM_Logisim/fsm_state_table.md` | Logisim simulation screenshots and filled test table still missing | Run H4 circuit in Logisim, capture screenshots, fill expected-vs-observed table | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 16:12 | Pull request opened to the faculty master repository (base main, head JasneevKalra:main); only Group_Submissions/D9A_Group15 changed | PR #9: https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 | Logisim/Vivado simulation evidence, utilization and timing reports, hardware demo, results, presentation and report still pending | Keep pushing to the fork; the PR updates automatically | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 18:07 | Logisim circuit opened and exported as a full-circuit image (inputs, range decoder, state registers, next-state/output logic, three 4-bit counters, LEDs, count outputs) | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ`, `02_FSM_Logisim/logisim_circuit_full.webp` | Simulation screenshots (states, counters, reset) and filled test table still missing | Run the test sequence in Logisim, capture screenshots, fill expected-vs-observed table | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
