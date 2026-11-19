@@ -5,7 +5,7 @@
 
 ## Result
 
-The simulation ran to `` at 1760 ns with:
+The simulation ran to `$finish` at 1760 ns with:
 
 ```
 Checks run: 88   Errors: 0
