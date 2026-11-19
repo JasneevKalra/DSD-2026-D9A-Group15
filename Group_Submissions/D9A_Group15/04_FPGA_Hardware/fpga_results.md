@@ -45,4 +45,6 @@ Source: `timing_summary.png` (Vivado Design Timing Summary).
 
 Vivado reports: **All user specified timing constraints are met.** With a 10 ns clock period and 5.534 ns of setup slack, the design has a comfortable margin at 100 MHz.
 
-## Still to add- Hardware test results and photos.
+## Still to add
+
+- Hardware test results and photos.
