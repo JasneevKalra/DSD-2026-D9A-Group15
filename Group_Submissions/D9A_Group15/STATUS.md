@@ -19,7 +19,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Simulation_Results/simulation_results.md` (Vivado XSim: 88 checks, 0 errors, TEST PASSED; waveforms for Test 1) | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`, `04_FPGA_Hardware/fpga_results.md`, `04_FPGA_Hardware/utilization_report.png`, `04_FPGA_Hardware/timing_summary.png` (92 LUTs, 118 flip-flops, 20 CARRY4; timing constraints met, WNS 5.534 ns, WHS 0.173 ns) | 19/11/2026 |
 | 9 | Hardware demonstration completed | Not Started | Planned for 20/11/2026; see `04_FPGA_Hardware/fpga_results.md` | 19/11/2026 |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Not Started | Final report and hardware results planned for 20/11/2026; results and presentation to be updated after the hardware test | 19/11/2026 |
 | 11 | Final Pull Request created | In Progress | https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 (opened; will be updated as remaining deliverables are added) | 19/11/2026 |
 
 ## 2. Time-wise progress log
@@ -54,6 +54,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 20:33 | Vivado timing summary uploaded: WNS 5.534 ns, WHS 0.173 ns, WPWS 4.500 ns, 0 failing endpoints; all user specified timing constraints are met at 100 MHz | `04_FPGA_Hardware/timing_summary.png`, `04_FPGA_Hardware/fpga_results.md` | Hardware test on the Boolean Board, results, presentation and report still missing | Test on the Boolean Board and record the observations | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 20:34 | Group reports the hardware test on the Boolean Board is not possible. Milestone 9 marked Blocked; results are documented as simulation and implementation only, with no hardware results claimed | `04_FPGA_Hardware/fpga_results.md` | Boolean Board hardware not available for testing | Finish results, presentation and final report using the simulation and implementation evidence | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 20:35 | Correction: the hardware test is not impossible, it is planned for tomorrow (20/11/2026). Milestone 9 set back to Not Started and the FPGA results note updated; no hardware results are claimed | `04_FPGA_Hardware/fpga_results.md` | Hardware test not yet done | Program the Boolean Board on 20/11/2026, record observations and photos | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 20:37 | Plan recorded: the hardware test and the final report will both be done on 20/11/2026; results and presentation will be finalised after the hardware test | `07_Final_Report/` (pending) | Final report not yet written; hardware test pending | Do the hardware test, then write the final report and finalise results and presentation on 20/11/2026 | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
