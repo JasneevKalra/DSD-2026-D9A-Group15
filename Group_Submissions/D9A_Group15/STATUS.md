@@ -18,7 +18,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
 | 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Simulation_Results/simulation_results.md` (Vivado XSim: 88 checks, 0 errors, TEST PASSED; waveforms for Test 1) | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`, `04_FPGA_Hardware/fpga_results.md`, `04_FPGA_Hardware/utilization_report.png`, `04_FPGA_Hardware/timing_summary.png` (92 LUTs, 118 flip-flops, 20 CARRY4; timing constraints met, WNS 5.534 ns, WHS 0.173 ns) | 19/11/2026 |
-| 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
+| 9 | Hardware demonstration completed | Blocked | Hardware test on the Boolean Board could not be done; see `04_FPGA_Hardware/fpga_results.md` | 19/11/2026 |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | In Progress | https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 (opened; will be updated as remaining deliverables are added) | 19/11/2026 |
 
@@ -52,6 +52,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 19:41 | Vivado utilization report uploaded: 92 Slice LUTs, 118 flip-flops, 57 slices, 23 bonded IOBs, 1 BUFGCTRL, no Block RAM or DSP | `04_FPGA_Hardware/utilization_report.png`, `04_FPGA_Hardware/fpga_results.md` | CARRY4 count and timing summary not yet uploaded; hardware not yet tested | Upload CARRY4 count and timing summary; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 20:11 | CARRY4 count added to the FPGA results: 20 (read from the implemented design with a Tcl command) | `04_FPGA_Hardware/fpga_results.md` | Timing summary (WNS, WHS) and hardware test still missing | Upload timing summary; test on the Boolean Board | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 20:33 | Vivado timing summary uploaded: WNS 5.534 ns, WHS 0.173 ns, WPWS 4.500 ns, 0 failing endpoints; all user specified timing constraints are met at 100 MHz | `04_FPGA_Hardware/timing_summary.png`, `04_FPGA_Hardware/fpga_results.md` | Hardware test on the Boolean Board, results, presentation and report still missing | Test on the Boolean Board and record the observations | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 20:34 | Group reports the hardware test on the Boolean Board is not possible. Milestone 9 marked Blocked; results are documented as simulation and implementation only, with no hardware results claimed | `04_FPGA_Hardware/fpga_results.md` | Boolean Board hardware not available for testing | Finish results, presentation and final report using the simulation and implementation evidence | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.

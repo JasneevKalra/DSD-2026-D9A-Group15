@@ -45,6 +45,6 @@ Source: `timing_summary.png` (Vivado Design Timing Summary).
 
 Vivado reports: **All user specified timing constraints are met.** With a 10 ns clock period and 5.534 ns of setup slack, the design has a comfortable margin at 100 MHz.
 
-## Still to add
+## Hardware demonstration
 
-- Hardware test results and photos.
+The hardware test on the Boolean Board could not be carried out, so no board results are claimed. The design is verified by Logisim simulation (14 tests passed), Vivado behavioral simulation (88 checks, 0 errors) and Vivado implementation (bitstream generated, all timing constraints met). The 7-segment segment/digit order and the button polarity in the board top module are therefore untested on hardware.
