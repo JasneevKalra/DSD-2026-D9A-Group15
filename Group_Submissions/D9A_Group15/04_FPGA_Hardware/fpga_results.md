@@ -47,4 +47,8 @@ Vivado reports: **All user specified timing constraints are met.** With a 10 ns 
 
 ## Hardware demonstration
 
-The hardware test on the Boolean Board could not be carried out, so no board results are claimed. The design is verified by Logisim simulation (14 tests passed), Vivado behavioral simulation (88 checks, 0 errors) and Vivado implementation (bitstream generated, all timing constraints met). The 7-segment segment/digit order and the button polarity in the board top module are therefore untested on hardware.
+The hardware test on the Boolean Board is planned for 20/11/2026. No board results are claimed yet. Until then the design is verified by Logisim simulation (14 tests passed), Vivado behavioral simulation (88 checks, 0 errors) and Vivado implementation (bitstream generated, all timing constraints met). The 7-segment segment/digit order and the button polarity in the board top module are still untested on hardware.
+
+## Still to add
+
+- Hardware test results and photos (planned 20/11/2026).
