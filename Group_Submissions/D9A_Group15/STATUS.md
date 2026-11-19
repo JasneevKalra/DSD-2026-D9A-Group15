@@ -20,7 +20,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`; bitstream generated in Vivado (reported by the group; utilization/timing reports not yet uploaded) | 19/11/2026 15:45 |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
-| 11 | Final Pull Request created | Not Started | [ ] | [ ] |
+| 11 | Final Pull Request created | In Progress | https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 (opened; will be updated as remaining deliverables are added) | 19/11/2026 |
 
 ## 2. Time-wise progress log
 Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.
@@ -37,6 +37,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 15:45 | Vivado: Verilog compiled and synthesis, implementation and bitstream generation completed successfully (reported by the group) | `03_Verilog_Implementation/RTL/game_score_categorizer.v`, `04_FPGA_Hardware/boolean_board.xdc` | Behavioral simulation result not yet recorded; utilization/timing reports and screenshots not yet uploaded; hardware not yet tested | Run/save simulation waveform and log; upload utilization and timing report screenshots; program the Boolean Board and test | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 15:50 | Problem analysis written: summary, objectives, I/O table, requirements, assumptions, constraints, edge cases, proposed solution and feasibility | `01_Problem_Analysis/problem_analysis.md` | FPGA utilization figures to be added from the Vivado report | Draw FSM diagram, write state table, add Logisim simulation evidence | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 15:59 | Moore FSM state diagram checked against the Logisim/Verilog design (correct) and uploaded. The first state-table image had errors (ignored the score category in IDLE; showed ACK=1 in IDLE returning to IDLE; START=1 in a category state ignored ACK), so it was replaced by a corrected table with encoding, outputs, counter actions and Boolean equations | `02_FSM_Logisim/fsm_state_diagram.webp`, `02_FSM_Logisim/fsm_state_table.md` | Logisim simulation screenshots and filled test table still missing | Run H4 circuit in Logisim, capture screenshots, fill expected-vs-observed table | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 16:12 | Pull request opened to the faculty master repository (base main, head JasneevKalra:main); only Group_Submissions/D9A_Group15 changed | PR #9: https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 | Logisim/Vivado simulation evidence, utilization and timing reports, hardware demo, results, presentation and report still pending | Keep pushing to the fork; the PR updates automatically | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
