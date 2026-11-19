@@ -17,11 +17,12 @@ Circuit: `../Game_Score_Categorizer_H4.circ`. Screenshots were taken in Logisim 
 | T9 Score 9 (mid MEDIUM) | `Score`=1001 (9), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts 0001/0010/0001 | Pass | `sim_09_score9_medium.png` |
 | T10 Boundary score 11 | `Score`=1011 (11), `START`=1 | HIGH | Q1/Q0 = 1/1, `HIGH_LED` lit (red), counts 0001/0010/0010 | Pass | `sim_10_score11_high.png` |
 | T11 Boundary score 10 | `Score`=1010 (10), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts LOW/MEDIUM/HIGH = 0001/0011/0010 | Pass | `sim_11_score10_medium.png` |
+| T12 Count once | After a reset: `Score`=0011 (3), `START` held at 1 for several clock ticks | LOW, `LOW_COUNT` stays 1 | Q1/Q0 = 0/1, `LOW_LED` lit, `LOW_COUNT`=0001 (not 0010 or more) | Pass | `sim_12_start_held_counts_once.png` |
+| T13 Repeated detections | LOW detected three times, `ACK` between detections | `LOW_COUNT` = 1, 2, 3 | `LOW_COUNT` = 0001, 0010, 0011; MEDIUM and HIGH counts stay 0000 | Pass | `sim_12_start_held_counts_once.png`, `sim_13_repeat_low_count2.png`, `sim_14_repeat_low_count3_before_reset.png` |
+| T14 Reset clears counters | From `LOW_COUNT`=3 (before reset), `RESET`=1 | State IDLE, all counts 0, LEDs off | Q1/Q0 = 0/0, all LEDs off, counts 0000/0000/0000 | Pass | `sim_14_repeat_low_count3_before_reset.png` (before), `sim_15_after_reset.png` (after) |
 
 The counts rise 1/0/0, 1/1/0, 1/1/1 across T2, T3 and T4, showing each detection increments only its own category counter.
 
-## Tests still to capture
+## Summary
 
-- `START` held for several ticks counting only once.
-- Counters after repeated detections of the same category.
-- `RESET` clearing counters that were non-zero (the reset screenshot shows counts already at 0000).
+All 14 planned Logisim tests passed: reset, LOW (3, 4), MEDIUM (5, 7, 9, 10), HIGH (11, 12), ACK, state hold, count-once, repeated detections and reset clearing non-zero counters.
