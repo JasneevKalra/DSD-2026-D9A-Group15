@@ -14,7 +14,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | `02_FSM_Logisim/fsm_state_diagram.webp`, `02_FSM_Logisim/fsm_state_table.md` | 19/11/2026 |
 | 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` | 19/11/2026 |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
+| 5 | Logisim simulation verified | In Progress | `02_FSM_Logisim/simulation/simulation_results.md` (reset, LOW score 3 and HIGH score 12 passed; MEDIUM, ACK, boundaries, hold, count-once still to capture) | 19/11/2026 18:33 |
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/game_score_categorizer.v` (compiled in Vivado without errors, as reported by the group) | 19/11/2026 15:45 |
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/tb_game_score_categorizer.v` (written; simulation not yet run) | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/boolean_board.xdc`; bitstream generated in Vivado (reported by the group; utilization/timing reports not yet uploaded) | 19/11/2026 15:45 |
@@ -40,6 +40,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 16:12 | Pull request opened to the faculty master repository (base main, head JasneevKalra:main); only Group_Submissions/D9A_Group15 changed | PR #9: https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9 | Logisim/Vivado simulation evidence, utilization and timing reports, hardware demo, results, presentation and report still pending | Keep pushing to the fork; the PR updates automatically | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 18:07 | Logisim circuit opened and exported as a full-circuit image (inputs, range decoder, state registers, next-state/output logic, three 4-bit counters, LEDs, count outputs) | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ`, `02_FSM_Logisim/logisim_circuit_full.webp` | Simulation screenshots (states, counters, reset) and filled test table still missing | Run the test sequence in Logisim, capture screenshots, fill expected-vs-observed table | Claude (for Jasneevsingh Kalra) |
 | 19/11/2026 | 18:29 | Full-circuit image (logisim_circuit_full.webp) removed from the repo at the group's request; it was a printer-view export without live values and is not simulation evidence | `02_FSM_Logisim/Game_Score_Categorizer_H4.circ` | Real simulation screenshots (with pin values) still missing | Capture screenshots in simulation mode and upload them | Claude (for Jasneevsingh Kalra) |
+| 19/11/2026 | 18:33 | Logisim simulation screenshots added for 3 tests: reset/IDLE, LOW (score 3) and HIGH (score 12); all matched the expected LED and counter values. Three printer-view exports without live values were not used | `02_FSM_Logisim/simulation/` | MEDIUM, ACK, boundary scores, hold, count-once and counter-repeat screenshots still missing | Capture the remaining tests in simulation mode | Claude (for Jasneevsingh Kalra) |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
