@@ -12,12 +12,16 @@ Circuit: `../Game_Score_Categorizer_H4.circ`. Screenshots were taken in Logisim 
 | T4 HIGH category | `Score`=1100 (12), `START`=1 | State HIGH (11), `HIGH_LED` on, `HIGH_COUNT` +1 | Q1/Q0 = 1/1, `HIGH_LED` lit (red), counts LOW/MEDIUM/HIGH = 0001/0001/0001 | Pass | `sim_04_high_score12.png` |
 | T5 ACK returns to IDLE | `ACK`=1 after a category detection (`START` still 1, `Score`=1100) | State IDLE (00), LEDs off, counts unchanged | Q1/Q0 = 0/0, all LEDs off, counts still 0001/0001/0001 | Pass | `sim_05_ack_return_idle.png` |
 | T6 State holds | In HIGH after a score-12 detection, no ACK; then Score changed to 0001 (1) with START=1 | State stays HIGH, no counter changes, even though score 1 would be LOW | Q1/Q0 = 1/1, HIGH_LED still lit (red), counts LOW/MEDIUM/HIGH = 0000/0000/0001; GO = 0 | Pass | `sim_06_hold_state.png` |
+| T7 Boundary score 4 | `Score`=0100 (4), `START`=1 | LOW | Q1/Q0 = 0/1, `LOW_LED` lit (green), counts LOW/MEDIUM/HIGH = 0001/0000/0001 | Pass | `sim_07_score4_low.png` |
+| T8 Boundary score 5 | `Score`=0101 (5), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts 0001/0001/0001 | Pass | `sim_08_score5_medium.png` |
+| T9 Score 9 (mid MEDIUM) | `Score`=1001 (9), `START`=1 | MEDIUM | Q1/Q0 = 1/0, `MEDIUM_LED` lit (yellow), counts 0001/0010/0001 | Pass | `sim_09_score9_medium.png` |
+| T10 Boundary score 11 | `Score`=1011 (11), `START`=1 | HIGH | Q1/Q0 = 1/1, `HIGH_LED` lit (red), counts 0001/0010/0010 | Pass | `sim_10_score11_high.png` |
 
 The counts rise 1/0/0, 1/1/0, 1/1/1 across T2, T3 and T4, showing each detection increments only its own category counter.
 
 ## Tests still to capture
 
-- Boundary scores 4, 5, 10 and 11.
+- Boundary score 10 (`Score`=1010; the screenshot meant for it shows 1001, which is 9).
 - `START` held for several ticks counting only once.
 - Counters after repeated detections of the same category.
 - `RESET` clearing counters that were non-zero (the reset screenshot shows counts already at 0000).
