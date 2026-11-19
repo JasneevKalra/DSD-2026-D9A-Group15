@@ -69,7 +69,7 @@ The design uses a **Moore** FSM with four states: IDLE (00), LOW (01), MEDIUM (1
 **State table, outputs and Boolean equations:** `02_FSM_Logisim/fsm_state_table.md`
 
 ## 6. Logisim Implementation
-- Logisim version: Logisim-evolution (exact version to be confirmed).
+- Logisim version: Logisim-evolution v5.0.0
 - Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H4.circ`
 - Test cases and expected/observed behaviour: 14 tests, all passed (reset, LOW 3 and 4, MEDIUM 5/7/9/10, HIGH 11/12, ACK, state hold, count-once, repeated detections, reset clearing non-zero counters). Table: `02_FSM_Logisim/simulation/simulation_results.md`.
 - Issues and corrections: see section 10.
