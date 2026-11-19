@@ -13,7 +13,7 @@
 - [x] FPGA constraints and implementation files, where applicable.
 - [ ] Synthesis/implementation reports and hardware evidence.
 - [ ] Expected-versus-observed results and conclusion.
-- [ ] Presentation.
+- [x] Presentation.
 - [ ] Final project report.
 
 ## Repository checks
