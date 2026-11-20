@@ -13,19 +13,19 @@
 - [x] FPGA constraints and implementation files, where applicable.
 - [x] Synthesis/implementation reports and hardware evidence.
 - [x] Expected-versus-observed results and conclusion.
-- [ ] Presentation.
+- [x] Presentation.
 - [x] Final project report.
 
 ## Repository checks
-- [ ] Repository name follows the required format.
-- [ ] All four members are listed in README.
-- [ ] Mandatory README headings are complete.
-- [ ] STATUS.md contains actual time-wise updates.
-- [ ] Files are in correct folders and open correctly.
-- [ ] Meaningful commits are present.
-- [ ] No passwords, tokens or confidential information uploaded.
-- [ ] Pull Request targets the faculty master repository and correct branch.
-- [ ] Pull Request title and description identify the group and project.
+- [x] Repository name follows the required format.
+- [x] All four members are listed in README.
+- [x] Mandatory README headings are complete.
+- [x] STATUS.md contains actual time-wise updates.
+- [x] Files are in correct folders and open correctly.
+- [x] Meaningful commits are present.
+- [x] No passwords, tokens or confidential information uploaded.
+- [x] Pull Request targets the faculty master repository and correct branch.
+- [x] Pull Request title and description identify the group and project.
 - [ ] Pull Request URL shared with faculty as instructed.
 
 ## Group leader declaration
