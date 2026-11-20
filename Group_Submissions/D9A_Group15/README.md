@@ -107,11 +107,10 @@ Future improvements: an error state for invalid input, saturating counters inste
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Jasneevsingh Kalra (group leader) | Verilog; GitHub documentation | Verilog RTL and testbench (`03_Verilog_Implementation/`); repository, README, STATUS and checklist (`README.md`, `STATUS.md`) |
-| Tanmay Sahadeo Taware | Logisim; Verilog | Logisim circuit and simulation (`02_FSM_Logisim/`); Verilog implementation (`03_Verilog_Implementation/`) |
-| Suraj Ramnath Dalvi | Presentation; final report | Final presentation (`06_Presentation/`); final report (`07_Final_Report/`) |
-| Yash Abhijit Khuperkar | Logisim; hand-written report | Logisim circuit and simulation (`02_FSM_Logisim/`); hand-written report (submitted separately, not in the repository) |
-
+| Jasneevsingh Kalra (group leader) | Logisim; GitHub documentation | Logisim circuit and simulation (`02_FSM_Logisim/`); repository, README, STATUS and checklist (`README.md`, `STATUS.md`) |
+| Tanmay Sahadeo Taware | Logisim | Logisim circuit and simulation (`02_FSM_Logisim/`) |
+| Suraj Ramnath Dalvi | Verilog; presentation; final report | Verilog RTL and testbench (`03_Verilog_Implementation/`); final presentation (`06_Presentation/`); final report (`07_Final_Report/`) |
+| Yash Abhijit Khuperkar | Verilog; hand-written report | Verilog RTL and testbench (`03_Verilog_Implementation/`); hand-written report (submitted separately, not in the repository) |
 Every student must be ready to explain the complete design.
 
 ## 12. Progress Log
