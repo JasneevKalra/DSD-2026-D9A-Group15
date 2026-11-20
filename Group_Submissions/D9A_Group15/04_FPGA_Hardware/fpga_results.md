@@ -47,8 +47,19 @@ Vivado reports: **All user specified timing constraints are met.** With a 10 ns 
 
 ## Hardware demonstration
 
-The hardware test on the Boolean Board is planned for 20/11/2026. No board results are claimed yet. Until then the design is verified by Logisim simulation (14 tests passed), Vivado behavioral simulation (88 checks, 0 errors) and Vivado implementation (bitstream generated, all timing constraints met). The 7-segment segment/digit order and the button polarity in the board top module are still untested on hardware.
+The bitstream was programmed on the Real Digital Boolean Board on 20/11/2026 (the board's DONE LED is lit in the photos). The group reports that the hardware demonstration was completed and recorded on video.
+
+**Photographed case: score 5 (MEDIUM), after a reset**
+
+| Item | Expected | Observed in the photo |
+|---|---|---|
+| LED | MEDIUM LED (LD1) on | LD1 lit |
+| 7-segment display 0 | state 2 (MEDIUM), LOW count 0, MEDIUM count 1, HIGH count 0 | reads 2 0 1 0 |
+
+The display digits are, left to right: state (0 IDLE, 1 LOW, 2 MEDIUM, 3 HIGH), LOW count, MEDIUM count, HIGH count. The score itself is shown only by the switches.
+
+Evidence: `hardware_photo_board_score5_medium.jpg` (whole board) and `hardware_photo_display_score5_closeup.jpg` (display close-up).
 
 ## Still to add
 
-- Hardware test results and photos (planned 20/11/2026).
+- The demonstration video (or a link to it) and the observations for the other test cases.
