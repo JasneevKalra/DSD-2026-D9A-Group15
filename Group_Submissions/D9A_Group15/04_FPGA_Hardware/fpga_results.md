@@ -60,6 +60,8 @@ The display digits are, left to right: state (0 IDLE, 1 LOW, 2 MEDIUM, 3 HIGH), 
 
 Evidence: `hardware_photo_board_score5_medium.jpg` (whole board) and `hardware_photo_display_score5_closeup.jpg` (display close-up).
 
+**Demonstration video (hosted externally on Google Drive):** https://drive.google.com/drive/folders/1mQUoD12ULA3UzhSWuDmA_176wDbxy463
+
 ## Still to add
 
-- The demonstration video (or a link to it) and the observations for the other test cases.
+- The observations for the other hardware test cases (LOW, HIGH, hold, count-once, reset).

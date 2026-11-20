@@ -88,7 +88,7 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/` (`simulation_
 - Tool/version: Vivado v2018.3 (64-bit)
 - Clock/constraints: 100 MHz clock on pin F14 (10 ns period); `04_FPGA_Hardware/boolean_board.xdc` (`sw[3:0]` score, `btn[0]` START, `btn[1]` ACK, `btn[2]` RESET, `led[2:0]` category LEDs, `D0_a`/`D0_seg` 7-segment display)
 - Synthesis/implementation summary: 92 Slice LUTs, 118 flip-flops, 20 CARRY4, 57 slices, 23 bonded IOBs, no Block RAM or DSP. Timing met: WNS 5.534 ns, WHS 0.173 ns, WPWS 4.500 ns, 0 failing endpoints. Bitstream generated. Details: `04_FPGA_Hardware/fpga_results.md`.
-- Programming and hardware test result: bitstream programmed on the Boolean Board on 20/11/2026 (DONE LED lit). In the photographed case, score 5 gave the MEDIUM LED (LD1) and the display read 2 0 1 0 (state 2, MEDIUM count 1), as expected. The group recorded a video of the full demonstration; results for the other test cases are to be added.
+- Programming and hardware test result: bitstream programmed on the Boolean Board on 20/11/2026 (DONE LED lit). In the photographed case, score 5 gave the MEDIUM LED (LD1) and the display read 2 0 1 0 (state 2, MEDIUM count 1), as expected. The group recorded a video of the full demonstration (Google Drive): https://drive.google.com/drive/folders/1mQUoD12ULA3UzhSWuDmA_176wDbxy463 . Results for the other test cases are to be added.
 - Evidence path: `04_FPGA_Hardware/` (`utilization_report.png`, `timing_summary.png`, `hardware_photo_board_score5_medium.jpg`, `hardware_photo_display_score5_closeup.jpg`)
 
 Explain differences between simulation and hardware results, if any: none observed in the photographed case (score 5); the group to confirm for the rest of the demonstration.
