@@ -14,7 +14,7 @@
 - [x] Synthesis/implementation reports and hardware evidence.
 - [x] Expected-versus-observed results and conclusion.
 - [ ] Presentation.
-- [ ] Final project report.
+- [x] Final project report.
 
 ## Repository checks
 - [ ] Repository name follows the required format.
