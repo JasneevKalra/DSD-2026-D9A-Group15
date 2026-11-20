@@ -111,6 +111,7 @@ Future improvements: an error state for invalid input, saturating counters inste
 | Tanmay Sahadeo Taware | Logisim; Verilog | Logisim circuit and simulation (`02_FSM_Logisim/`); Verilog implementation (`03_Verilog_Implementation/`) |
 | Suraj Ramnath Dalvi | Presentation; final report | Final presentation (`06_Presentation/`); final report (`07_Final_Report/`) |
 | Yash Abhijit Khuperkar | Logisim; hand-written report | Logisim circuit and simulation (`02_FSM_Logisim/`); hand-written report (submitted separately, not in the repository) |
+
 Every student must be ready to explain the complete design.
 
 ## 12. Progress Log
