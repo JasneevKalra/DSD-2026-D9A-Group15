@@ -125,7 +125,19 @@ The Game Score Categorizer (Moore FSM with H4 category counters) classifies scor
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[To be completed by the team]
+**What we learned**
+- How to design a digital system as a Moore FSM: choosing the state encoding, writing the state table and Boolean equations, and keeping the same design from Logisim to Verilog to the FPGA.
+- How to verify in stages: Logisim tests (14), a self-checking Verilog testbench (88 checks, 0 errors) and then the Boolean Board, instead of trusting only one level.
+- The practical side of the tools: wiring and simulating in Logisim, and the Vivado flow with pin constraints, DRC messages, utilization and timing reports.
+- Real-hardware details such as debouncing buttons, turning START and ACK into single pulses and multiplexing a 7-segment display.
+- Working as a team with Git and GitHub: a fork, regular STATUS updates, evidence in the right folders and a pull request.
+
+**What we would improve**
+- Check the target board and its pin constraints before running synthesis, because constraints for the wrong board caused a Vivado DRC error.
+- Review the state table against the design earlier; the first version missed the score category and the priority of ACK.
+- Capture simulation evidence as we go (live values, full run) instead of re-taking screenshots later.
+- Start the hardware test earlier and test more cases on the board, such as the boundary scores 4, 5, 10 and 11.
+- Extend the design with saturating counters, an error state, a Mealy version and the score shown on the second 7-segment display.
 
 ## 15. Final Submission Checklist
 - [x] Team details and problem analysis complete.
