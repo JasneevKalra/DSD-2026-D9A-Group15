@@ -26,9 +26,9 @@
 - [x] No passwords, tokens or confidential information uploaded.
 - [x] Pull Request targets the faculty master repository and correct branch.
 - [x] Pull Request title and description identify the group and project.
-- [ ] Pull Request URL shared with faculty as instructed.
+- [x] Pull Request URL shared with faculty as instructed.
 
 ## Group leader declaration
 I confirm that I have checked the submission and that it contains the group's project work and supporting evidence to the best of my knowledge.
 
-**Name:** [ ] | **Date/time:** [ ] | **Pull Request URL:** [ ]
+**Name:** Jasneevsingh Kalra | **Date/time:** 20-11-2026 20:46 | **Pull Request URL:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/9
