@@ -62,6 +62,22 @@ Evidence: `hardware_photo_board_score5_medium.jpg` (whole board) and `hardware_p
 
 **Demonstration video (hosted externally on Google Drive):** https://drive.google.com/drive/folders/1mQUoD12ULA3UzhSWuDmA_176wDbxy463
 
+## Sequence seen in the demonstration video
+
+Frames of the video (about 29 s, sampled once per second) show the following display readings on display 0 (state, LOW count, MEDIUM count, HIGH count). The switch positions are not clearly visible in the video, so the scores are not listed.
+
+| Approx. time | Display | Meaning |
+|---|---|---|
+| 0–4 s | 0 0 0 0 | after reset: IDLE, all counts 0 |
+| ~4–5 s | 3 0 0 1 | HIGH detected: state 3, HIGH count 1 |
+| ~6–11 s | 0 0 0 1 | ACK: back to IDLE, count kept |
+| ~11–12 s | 1 1 0 1 | LOW detected: state 1, LOW count 1 (HIGH count still 1) |
+| ~13–17 s | 0 1 0 1 | ACK: back to IDLE, counts kept |
+| ~17 s | 2 1 1 1 | MEDIUM detected: state 2, MEDIUM count 1 (counts 1/1/1) |
+| ~18–27 s | 2 1 1 1 | state and counts unchanged while the controls are operated (consistent with the hold behaviour) |
+| ~28–29 s | 0 0 0 0 | reset: state and all counts cleared |
+
+Each category was detected, the matching counter rose by 1 and the others stayed unchanged, ACK returned the state to IDLE without clearing the counts, and reset cleared everything. This is the same behaviour as in simulation.
 ## Still to add
 
-- The observations for the other hardware test cases (LOW, HIGH, hold, count-once, reset).
+- Group notes on any difference from simulation and the exact scores used for each case.

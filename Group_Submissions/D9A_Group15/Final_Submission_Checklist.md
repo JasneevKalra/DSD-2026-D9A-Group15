@@ -11,7 +11,7 @@
 - [x] Testbench and test vectors.
 - [x] Simulation waveforms/logs and verification summary.
 - [x] FPGA constraints and implementation files, where applicable.
-- [ ] Synthesis/implementation reports and hardware evidence.
+- [x] Synthesis/implementation reports and hardware evidence.
 - [ ] Expected-versus-observed results and conclusion.
 - [x] Presentation.
 - [ ] Final project report.
