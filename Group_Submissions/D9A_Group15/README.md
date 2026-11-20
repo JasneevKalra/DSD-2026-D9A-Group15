@@ -107,11 +107,10 @@ Future improvements: an error state for invalid input, saturating counters inste
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
-| Member 4 | [ ] | [ ] |
-
+| Jasneevsingh Kalra (group leader) | Verilog; GitHub documentation | Verilog RTL and testbench (`03_Verilog_Implementation/`); repository, README, STATUS and checklist (`README.md`, `STATUS.md`) |
+| Tanmay Sahadeo Taware | Logisim; Verilog | Logisim circuit and simulation (`02_FSM_Logisim/`); Verilog implementation (`03_Verilog_Implementation/`) |
+| Suraj Ramnath Dalvi | Presentation; final report | Final presentation (`06_Presentation/`); final report (`07_Final_Report/`) |
+| Yash Abhijit Khuperkar | Logisim; hand-written report | Logisim circuit and simulation (`02_FSM_Logisim/`); hand-written report (submitted separately, not in the repository) |
 Every student must be ready to explain the complete design.
 
 ## 12. Progress Log
@@ -120,7 +119,7 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[To be completed after the hardware test planned for 20/11/2026]
+The Game Score Categorizer (Moore FSM with H4 category counters) classifies scores 0 to 15 into LOW (0 to 4), MEDIUM (5 to 10) and HIGH (11 to 15) correctly, holds the category until ACK, counts each detection exactly once and clears everything on reset. The Logisim circuit passed 14 tests, the Verilog testbench passed 88 checks with 0 errors, and the Boolean Board showed the same states and counts (display 3 0 0 1 for HIGH, 1 1 0 1 for LOW, 2 1 1 1 for MEDIUM, 0 0 0 0 after reset). The design uses 92 LUTs, 118 flip-flops and 20 CARRY4 and meets timing at 100 MHz (WNS 5.534 ns). Full tables: `05_Results/results.md`; full report: `07_Final_Report/Game_Score_Categorizer_Final_Report.docx`. Limitations: the 4-bit counters wrap from 15 to 0 and there is no error state. Future improvements: saturating counters, a Mealy version, UART output of the counts.
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
@@ -135,7 +134,7 @@ What did the team learn? What would you improve?
 - [x] Verilog RTL and testbench uploaded.
 - [x] Simulation results and test cases documented.
 - [x] FPGA implementation and hardware evidence uploaded.
-- [ ] Results, challenges and conclusion documented.
+- [x] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded.
 - [x] STATUS.md is up to date.
 - [ ] Final Pull Request created and URL recorded.

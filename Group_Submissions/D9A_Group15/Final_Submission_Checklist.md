@@ -12,8 +12,8 @@
 - [x] Simulation waveforms/logs and verification summary.
 - [x] FPGA constraints and implementation files, where applicable.
 - [x] Synthesis/implementation reports and hardware evidence.
-- [ ] Expected-versus-observed results and conclusion.
-- [x] Presentation.
+- [x] Expected-versus-observed results and conclusion.
+- [ ] Presentation.
 - [ ] Final project report.
 
 ## Repository checks
